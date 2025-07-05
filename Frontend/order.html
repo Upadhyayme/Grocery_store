@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GSMS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="csrf-token" content="kmapods5wQ5L1hn7rcR9OPst7EsN0gC7SrHh3m9K"/>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,600,700">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css?v=1.0">
+    <link rel="stylesheet" href="css/custom.css?v=1.3.3">
+</head>
+
+<body class="tooltips">
+<div class="container">
+
+    <!-- Header -->
+    <div class="header content rows-content-header">
+        <button class="button-menu-mobile show-sidebar">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav visible-lg visible-md limit-chars">
+                        <li>
+                            <a href="index.html" data-toggle="tooltip" title="Dashboard">
+                                <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="manage-product.html" data-toggle="tooltip" title="Products">
+                                <i class="zmdi zmdi-assignment zmdi-hc-fw"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Form -->
+    <div class="right content-page">
+        <div class="body content rows scroll-y">
+            <form method="post" action="">
+                <div class="box-info full" id="taskFormContainer">
+                    <h2>
+                        New Order
+                        <input name="customerName" id="customerName" type="text" class="form-control" placeholder="Customer Name" style="max-width:230px; float: right; margin-top: -11px;">
+                    </h2>
+
+                    <div class="row mb-2" style="margin-top: -10px;">
+                        <div class="col-sm-4"><label>Product</label></div>
+                        <div class="col-sm-3"><label>Price</label></div>
+                        <div class="col-sm-2"><label>Quantity</label></div>
+                        <div class="col-sm-3">
+                            <label>Total</label>
+                            <button class="btn btn-sm btn-primary pull-right" type="button" id="addMoreButton" style="margin-top: -5px;">Add More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dynamic Product List -->
+                <div id="itemsInOrder"></div>
+
+                <!-- Grand Total Section -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="box-info full p-3 mb-3 mt-0">
+                            <div class="row">
+                                <div class="col-sm-9 text-right">
+                                    <span><b>Total</b></span>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="text" id="product_grand_total" name="product_grand_total" class="product-grand-total" value="0.0"> Rs
+                                    <button class="btn btn-sm btn-primary pull-right" type="button" id="saveOrder">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hidden Template for Product Row -->
+                <div class="product-box hidden">
+                    <div class="row product-item">
+                        <div class="col-sm-12">
+                            <div class="box-info full p-3 mb-3 mt-0">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <select name="product" class="form-control cart-product" style="max-width: 250px;"></select>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="text" name="product_price" class="product-price" value="0.0">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="number" name="qty" min="1" class="form-control product-qty" value="1" style="max-width: 100px;">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="text" name="item_total" class="product-total"> Rs
+                                        <button class="btn btn-sm btn-danger pull-right remove-row" type="button">Remove</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="js/packages/jquery.min.js"></script>
+<script src="js/custom/common.js"></script>
+<script src="js/custom/order.js"></script>
+</body>
+</html>
