@@ -1,5 +1,5 @@
-# Grocery_store
-# Grocery 🛒Store Management Web Application :This is a full-stack Grocery Store Management System built as a 3-tier architecture project using:
+# Grocery 🛒Store Management Web Application 
+This is a full-stack Grocery Store Management System built as a 3-tier architecture project using:
 Frontend: HTML, CSS, JavaScript, Bootstrap
 Backend: Python (Flask)
 Database: MySQL
